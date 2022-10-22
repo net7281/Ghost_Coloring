@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What color is my ghost?</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <style>
+        /* reset */
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none;}
+
+        body{ 
+            color: #606060;
+            font-family: 'Fjalla One', sans-serif;
+        }
+        .wrap{
+            width: 100%; height: 100vh;
+            position: relative;
+            overflow: hidden ; 
+            min-height: 800px;
+        }
+        .title{
+            font-size: 25px;
+            font-weight: 100;
+            text-align: center;
+            margin-top: 120px;
+        }
+        
+        /* ghost */
+        .ghost_wrap{
+            width: 350px; height: 350px;
+            margin: 0 auto;
+            margin-top: 150px;
+            position: relative;
+            /* opacity: 0; */
+        }
+        .bg{
+            width: 350px; height: 350px;
+            background-color: #FFB4B4;
+            border-radius: 50%;
+            filter: blur(50px);
+            -webkit-filter: blur(50px);
+            position: absolute; z-index: 0;
+            opacity: 0.4;
+        }
+        .ghost{
+            width: 160px; height: 230px;
+            position: absolute; z-index: 5;
+            top: calc(50% - 115px);
+            left: calc(50% - 80px);
+        }
+        .blur{
+            filter: blur(4px);
+            -webkit-filter: blur(4px);
+        }
+        .ghost_head{
+            width: 160px; height: 160px;
+            background-color: #FFB4B4;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .ghost_body{
+            width: 160px; height: 80px;
+            background-color: #FFB4B4;
+            position: absolute;
+            top: 80px;
+        }
+        .ghost_leg{
+            width: 160px; height: 150px;
+            position: absolute;
+            bottom: 0;
+        }
+        .ghost_leg::after{
+            content: '';
+            display: none;
+            clear: both;
+        }
+        .ghost_leg div{
+            width: 40px; height: 100%;
+            background-color: #FFB4B4;
+            float: left;
+            border-radius: 25px;
+        }
+        .ghost_leg div:nth-child(1){ height: 132px; }
+        .ghost_leg div:nth-child(2){ height: 150px; }
+        .ghost_leg div:nth-child(3){ height: 113px; }
+        .ghost_leg div:nth-child(4){ height: 136px; }
+        
+        .ghost_eyes{
+            width: 90px; height: 17px;
+            position: absolute;
+            top: 35%;
+            left: calc(50% - 40px);
+        }
+        .ghost_eyes div{
+            width: 32px; height: 17px;
+            background-color: #fff;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            position: absolute; bottom: 0;
+        }
+        .ghost_eyes div:nth-child(1){ left: 0; }
+        .ghost_eyes div:nth-child(2){ right: 0; }
+
+        /* bt */
+        .bt_find_ghost{
+            width: 170px; height: 45px;
+            border-radius: 50px;
+            border: 1px solid #606060;
+            text-align: center; line-height: 45px;
+            font-size: 15px;
+            position: absolute;
+            top: 450px; left: calc(50% - 85px);
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            transition: all 0.5s;
+        }
+        .bt_find_ghost:hover{
+            filter: blur(0);
+            -webkit-filter: blur(0);
+        }
+        .info{
+            position: absolute;
+            bottom: 50px; left: calc(50% - 85px);
+            text-align: center;
+            font-size: 10px;
+        }
+        .info p{
+            color: #A8A8A8;
+        }
+        .info span{
+            font-size: 12px;
+            color: #606060;
+        }
+        .info a{
+            display: block;
+            color: #A8A8A8;
+        }
+        .info svg{ margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <h1 class="title">What color is my ghost?</h1>
+
+        <div class="ghost_wrap">
+            <div class="bg"></div>
+            <div class="ghost">
+                <div class="ghost_head blur"></div>
+                <div class="ghost_body blur"></div>
+                <div class="ghost_leg">
+                    <div class="blur"></div>
+                    <div class="blur"></div>
+                    <div class="blur"></div>
+                    <div class="blur"></div>
+                </div>
+                <div class="ghost_eyes">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bt_find_ghost">
+            Find my ghost
+        </div>
+
+        <div class="info">
+            <p>made by <span>net7281</span></p>
+            <a href="https://blog.naver.com/zooop7281">
+                <svg id="그룹_1" data-name="그룹 1" xmlns="http://www.w3.org/2000/svg" width="12.78" height="11.854" viewBox="0 0 12.78 11.854">
+                    <path id="패스_2" data-name="패스 2" d="M10.174,18.127a.44.44,0,1,0,.44.44A.44.44,0,0,0,10.174,18.127Z" transform="translate(-7.385 -13.753)" fill="#a8a8a8"/>
+                    <path id="패스_3" data-name="패스 3" d="M28.082,17.937a.474.474,0,1,0,.474.474A.474.474,0,0,0,28.082,17.937Z" transform="translate(-20.946 -13.609)" fill="#a8a8a8"/>
+                    <path id="패스_4" data-name="패스 4" d="M11.07,0H1.71A1.71,1.71,0,0,0,0,1.71V7.265a1.71,1.71,0,0,0,1.71,1.71H5.016L6.14,11.624s.077.23.265.23h0c.187,0,.265-.23.265-.23L7.794,8.975H11.07a1.71,1.71,0,0,0,1.71-1.71V1.71A1.71,1.71,0,0,0,11.07,0ZM4.015,4.911A1.059,1.059,0,0,1,2.96,5.956a.877.877,0,0,1-.635-.269V5.87H1.559V2.716s0,0,0,0v0c.048.008.765,0,.765,0V3.92c.18-.307.7-.3.7-.3A1.12,1.12,0,0,1,4.015,4.911Zm1.346-1.2V5.875H4.613V3.737c0-.291-.361-.372-.361-.372V2.612A1.035,1.035,0,0,1,5.361,3.715ZM7.136,5.957A1.208,1.208,0,0,1,5.881,4.8,1.208,1.208,0,0,1,7.136,3.647,1.208,1.208,0,0,1,8.39,4.8,1.208,1.208,0,0,1,7.136,5.957Zm4.1,0a1.068,1.068,0,0,1-1.1,1.1H9.793V6.343H10s.468.043.463-.678c0,0-.091.292-.748.292a.987.987,0,0,1-.931-.976V4.636A1.064,1.064,0,0,1,9.825,3.618a.762.762,0,0,1,.651.291V3.678h.759Z" fill="#a8a8a8"/>
+                    <path id="패스_5" data-name="패스 5" d="M40.178,17.981a.463.463,0,1,0,.463.463A.463.463,0,0,0,40.178,17.981Z" transform="translate(-30.132 -13.642)" fill="#a8a8a8"/>
+                </svg>
+                https://blog.naver.com/zooop7281
+            </a>
+            <a href="https://github.com/net7281">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+                    <path id="패스_1" data-name="패스 1" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0ZM7.7,10.084c-.192.037-.254-.081-.254-.182V8.861a.9.9,0,0,0-.261-.7A1.677,1.677,0,0,0,8.92,6.288,1.466,1.466,0,0,0,8.529,5.27a1.364,1.364,0,0,0-.037-1s-.318-.1-1.042.388a3.615,3.615,0,0,0-1.9,0c-.724-.49-1.043-.388-1.043-.388a1.363,1.363,0,0,0-.036,1A1.466,1.466,0,0,0,4.08,6.288,1.681,1.681,0,0,0,5.808,8.162a.808.808,0,0,0-.241.507.807.807,0,0,1-1.1-.315.8.8,0,0,0-.581-.391s-.37,0-.026.231a1,1,0,0,1,.421.555s.219.677,1.275.447V9.9c0,.1-.061.218-.25.183a3.79,3.79,0,1,1,2.4,0Z" fill="#a8a8a8"/>
+                </svg>
+                https://github.com/net7281
+            </a>
+        </div>
+    </div>
+</body>
+</html>
