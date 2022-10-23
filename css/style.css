@@ -28,6 +28,7 @@ body{
     margin: 0 auto;
     margin-top: 150px;
     position: relative;
+    transition: all 1s;
     opacity: 0;
 }
 .bg{
@@ -45,11 +46,12 @@ body{
     position: absolute; z-index: 5;
     top: calc(50% - 115px);
     left: calc(50% - 80px);
-    animation: ghost 8s linear normal infinite;
+    animation: ghost 8s linear normal infinite,
+            ghost_blur 3s alternate infinite;
 }
 .blur{
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
 }
 .ghost_head{
     width: 160px; height: 160px;
@@ -107,8 +109,8 @@ body{
     background-color: #fff;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
+    /* filter: blur(3px);
+    -webkit-filter: blur(3px); */
     position: absolute; bottom: 0;
 }
 .ghost_eyes div:nth-child(1){ 
@@ -209,6 +211,12 @@ body{
         -webkit-filter: blur(2px);
     }
     100%{}
+}
+@keyframes ghost_blur{
+    to{
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+    }
 }
 @keyframes ghost{
     from{

@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- j -->
+    <script>
+
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -18,15 +23,15 @@
         <h1 class="title">What color is my ghost?</h1>
 
         <div class="ghost_wrap">
-            <div class="bg"></div>
-            <div class="ghost">
-                <div class="ghost_head blur"></div>
-                <div class="ghost_body blur"></div>
+            <div class="bg findColor"></div>
+            <div class="ghost blur">
+                <div class="ghost_head findColor"></div>
+                <div class="ghost_body findColor"></div>
                 <div class="ghost_leg">
-                    <div class="blur"></div>
-                    <div class="blur"></div>
-                    <div class="blur"></div>
-                    <div class="blur"></div>
+                    <div class="findColor"></div>
+                    <div class="findColor"></div>
+                    <div class="findColor"></div>
+                    <div class="findColor"></div>
                 </div>
                 <div class="ghost_eyes">
                     <div></div>
@@ -35,9 +40,34 @@
             </div>
         </div>
 
-        <div class="bt_find_ghost">
+        <div class="bt_find_ghost" onclick="findGhost()">
             Find my ghost
         </div>
+
+        <script>
+            function findGhost(){
+                const ghost = document.querySelector('.ghost_wrap');
+                const bt = document.querySelector('.bt_find_ghost');
+                
+                const findColor = document.querySelectorAll('.findColor');
+
+                var bgcolor=getRandomColor();
+
+                for(i =0 ;i<findColor.length;i++){
+                    findColor[i].style.backgroundColor = bgcolor;
+                }
+                ghost.style.opacity =1;
+                bt.style.opacity =0;
+                
+                setTimeout(function() {
+                    bt.style.display = "none";
+                }, 500);
+            }
+
+            function getRandomColor() {
+                return "#" + Math.floor(Math.random() * 16777215).toString(16);
+            }
+        </script>
 
         <div class="info">
             <div class="share">
