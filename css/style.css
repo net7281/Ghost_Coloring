@@ -15,6 +15,22 @@ body{
     -webkit-filter: blur(0.5px);
     animation: start_ani 2s ease-out;
 }
+.wrap_bg{
+    position: absolute;
+    top: -250px;
+    left: 50%;
+    margin-left: -1100px;
+    z-index: -500;
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
+    opacity: 0;
+}
+.wrap_bg:nth-child(1) path{
+    animation: bg_move1 8s linear alternate infinite;
+}
+.wrap_bg:nth-child(2) path{
+    animation: bg_move2 5s linear alternate infinite;
+}
 .title{
     font-size: 25px;
     font-weight: 100;
@@ -33,12 +49,13 @@ body{
 }
 .bg{
     width: 350px; height: 350px;
-    background-color: #FFB4B4;
+    background-color: #fff;
     border-radius: 50%;
     filter: blur(50px);
     -webkit-filter: blur(50px);
     position: absolute; z-index: 0;
     opacity: 0.4;
+    transform: scale(2);
     animation: g_background 2s linear alternate infinite;
 }
 .ghost{
@@ -138,9 +155,11 @@ body{
     filter: blur(0);
     -webkit-filter: blur(0);
 }
+
+/* info */
 .info{
     position: absolute;
-    bottom: 50px; left: calc(50% - 85px);
+    bottom: 50px; left: calc(50% - 75px);
     text-align: center;
     font-size: 10px;
 }
@@ -238,7 +257,7 @@ body{
 }
 @keyframes g_background{
     to{
-        transform: scale(0.8);
+        transform: scale(1);
         filter: blur(30px);
         -webkit-filter: blur(30px);        
     }
@@ -261,4 +280,14 @@ body{
     50%{height: 10px;}
     55%{height: 17px;}
     100%{height: 17px;}
+}
+@keyframes bg_move1 {
+    to{
+        d: path("M3901.954,670.361s184.218-152.3,533.353-152.3S4813.8,630.1,5197.015,732.784s531.124,14.851,656.551,14.851V-34.378H3892.138Z");
+    }
+}
+@keyframes bg_move2 {
+    to{
+        d: path("M3920.745,479.721s349.892,145.153,699.027,145.153,433.2-169.566,805.982-183.351,302.384,95.5,427.812,95.5v-571.4H3892.138Z");
+    }
 }

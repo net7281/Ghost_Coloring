@@ -18,12 +18,20 @@
     </script>
 </head>
 <body>
+
     <div class="wrap">
+        <svg class="wrap_bg" xmlns="http://www.w3.org/2000/svg" width="2249.429" height="1190.252" viewBox="0 0 2249.429 1190.252">
+            <path class="findColorFill" d="M3920.745,669.218s349.892,198.657,699.027,198.657,433.2-232.067,805.982-250.935,302.384,130.7,427.812,130.7V-34.378H3892.138Z" transform="translate(-3748.138 178.378)" fill="#ffb4b4" opacity="0.15"/>
+        </svg>
+        <svg class="wrap_bg" xmlns="http://www.w3.org/2000/svg" width="2249.429" height="947.252" viewBox="0 0 2249.429 947.252">
+            <path class="findColorFill" d="M3892.138,595.086s223.416-101.712,572.551-101.712,601.553,247.6,926.71,160.479,316.431-171.27,462.167-255.41V-34.378H3892.138Z" transform="translate(-3748.138 178.378)" fill="#ffb4b4" opacity="0.15"/>
+         </svg>
+          
 
         <h1 class="title">What color is my ghost?</h1>
 
         <div class="ghost_wrap">
-            <div class="bg findColor"></div>
+            <div class="bg"></div>
             <div class="ghost blur">
                 <div class="ghost_head findColor"></div>
                 <div class="ghost_body findColor"></div>
@@ -49,12 +57,20 @@
                 const ghost = document.querySelector('.ghost_wrap');
                 const bt = document.querySelector('.bt_find_ghost');
                 
+                const wrap_bg = document.querySelectorAll('.wrap_bg');
                 const findColor = document.querySelectorAll('.findColor');
+                const findColorFill = document.querySelectorAll('.findColorFill');
 
                 var bgcolor=getRandomColor();
 
                 for(i =0 ;i<findColor.length;i++){
                     findColor[i].style.backgroundColor = bgcolor;
+                }
+                for(i =0 ;i<findColorFill.length;i++){
+                    findColorFill[i].style.fill = bgcolor;
+                }
+                for(i =0;i<wrap_bg.length;i++){
+                    wrap_bg[i].style.opacity =1;
                 }
                 ghost.style.opacity =1;
                 bt.style.opacity =0;
