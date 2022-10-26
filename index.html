@@ -20,6 +20,33 @@
 <body>
 
     <div class="wrap">
+        <div class="sparkle_container">
+            <span style="--i:11;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:27;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:29;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:23;"></span>
+        </div>
         <svg class="wrap_bg" xmlns="http://www.w3.org/2000/svg" width="2249.429" height="1190.252" viewBox="0 0 2249.429 1190.252">
             <path class="findColorFill" d="M3920.745,669.218s349.892,198.657,699.027,198.657,433.2-232.067,805.982-250.935,302.384,130.7,427.812,130.7V-34.378H3892.138Z" transform="translate(-3748.138 178.378)" fill="#ffb4b4" opacity="0.15"/>
         </svg>
@@ -56,6 +83,7 @@
             function findGhost(){
                 const ghost = document.querySelector('.ghost_wrap');
                 const bt = document.querySelector('.bt_find_ghost');
+                const wrap = document.querySelector('.wrap');
                 
                 const wrap_bg = document.querySelectorAll('.wrap_bg');
                 const findColor = document.querySelectorAll('.findColor');
@@ -74,6 +102,7 @@
                 }
                 ghost.style.opacity =1;
                 bt.style.opacity =0;
+                wrap.style.boxShadow = 'inset 0 0 100px #00000080';
                 
                 setTimeout(function() {
                     bt.style.display = "none";
