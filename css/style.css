@@ -63,6 +63,29 @@ body{
     text-align: center;
     margin-top: 120px;
 }
+.message{
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+    top: 310px;
+    letter-spacing:5px;
+    transition: all 1s;
+    opacity:0;
+}
+@keyframes message {
+    60%{
+        opacity:1;
+        letter-spacing:0;
+    }
+    70%{
+        opacity:1;
+        letter-spacing:0;
+    }
+    100%{
+        letter-spacing:0;
+        opacity:0;
+    }
+}
 
 /* ghost */
 .ghost_wrap{
@@ -71,6 +94,7 @@ body{
     margin-top: 150px;
     position: relative;
     transition: all 1s;
+    cursor: pointer;
     opacity: 0;
 }
 .bg{
@@ -91,6 +115,9 @@ body{
     left: calc(50% - 80px);
     animation: ghost 8s linear normal infinite,
                ghost_blur 3s alternate infinite;
+}
+.ghost_wrap:hover{
+    transform: scale(1.02);
 }
 .blur{
     filter: blur(3px);
@@ -180,6 +207,33 @@ body{
 .bt_find_ghost:hover{
     filter: blur(0);
     -webkit-filter: blur(0);
+}
+/*  */
+.color_info{
+    width: 200px; height: 150px;
+    background-color: #fff;
+    border-radius: 30px;
+    position: absolute;
+    box-shadow: 0 0 8px #00000025;
+}
+.color_info p{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+.color_circle{
+    background-color: #FFB4B4;
+    width: 25px; height: 25px;
+    border-radius: 50%;
+    margin-left: 50px; 
+    margin-top: 10px;
+   
+}
+.color_info span{
+    position: absolute;
+    top: 62px; left: 80px; 
+    font-size: 15px;
+    color: #A8A8A8;
 }
 
 /* info */
