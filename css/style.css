@@ -208,32 +208,58 @@ body{
     filter: blur(0);
     -webkit-filter: blur(0);
 }
-/*  */
+/* pop */
+.hide{
+    display: none !important;
+}
+.bg_color_info{
+    width: 100%; height: 100vh;
+    position: absolute;
+    background-color: #0000001e;
+}
 .color_info{
     width: 200px; height: 150px;
     background-color: #fff;
     border-radius: 30px;
-    position: absolute;
     box-shadow: 0 0 8px #00000025;
+    position: absolute;
+    top: 420px; left: calc(50% - 100px);
+    z-index: 100;
+    display: flex; gap: 10px;
+    flex-direction: column;
+    align-items: center;
 }
 .color_info p{
     font-size: 15px;
     text-align: center;
     margin-top: 30px;
 }
+.color_info span{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
 .color_circle{
-    background-color: #FFB4B4;
+    background-color: #000000;
     width: 25px; height: 25px;
     border-radius: 50%;
-    margin-left: 50px; 
-    margin-top: 10px;
-   
 }
-.color_info span{
-    position: absolute;
+.color_info .color_text{
     top: 62px; left: 80px; 
     font-size: 15px;
     color: #A8A8A8;
+}
+.color_info button{
+    width: 120px; height: 30px;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+    color: #aaa;
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+.color_info button:hover{
+    border: 1px solid #aaa;
 }
 
 /* info */

@@ -59,7 +59,7 @@
         <p class="message">your ghost is...</p>
         <div class="ghost_wrap">
             <div class="bg"></div>
-            <div class="ghost blur">
+            <div class="ghost blur" onclick="toggleColorInfo()">
                 <div class="ghost_head findColor"></div>
                 <div class="ghost_body findColor"></div>
                 <div class="ghost_leg">
@@ -79,10 +79,16 @@
             Find my ghost
         </div>
 
-        <div class="color_info">
-            <p>The color of your ghost is</p>
-            <div class="color_circle findColor"></div>
-            <span>#FFB4B4</span>
+        <div class="color_info_wrap hide">
+            <div class="bg_color_info"></div>
+            <div class="color_info">
+                <p>The color of your ghost is</p>
+                <span>
+                    <div class="color_circle findColor"></div>
+                    <span class="color_text">#000000</span>
+                </span>
+                <button type="button">get your ghost</button>
+            </div>
         </div>
 
         <script>
@@ -96,8 +102,9 @@
                 const wrap_bg = document.querySelectorAll('.wrap_bg');
                 const findColor = document.querySelectorAll('.findColor');
                 const findColorFill = document.querySelectorAll('.findColorFill');
+                const color_text = document.querySelector(".color_text");
 
-                var bgcolor=getRandomColor();
+                let bgcolor=getRandomColor();
 
                 for(i =0 ;i<findColor.length;i++){
                     findColor[i].style.backgroundColor = bgcolor;
@@ -105,6 +112,7 @@
                 for(i =0 ;i<findColorFill.length;i++){
                     findColorFill[i].style.fill = bgcolor;
                 }
+                color_text.innerText = bgcolor;
                 
                 // ghost.style.opacity =1;
                 bt.style.opacity =0;
@@ -130,6 +138,10 @@
 
             function getRandomColor() {
                 return "#" + Math.floor(Math.random() * 16777215).toString(16);
+            }
+
+            function toggleColorInfo(){
+                document.querySelector(".color_info_wrap").classList.remove("hide")
             }
         </script>
 
