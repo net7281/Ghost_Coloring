@@ -58,15 +58,38 @@ function toggleColorInfo(){
 }
 
 function downloadGhost(){
-    const ghost = document.querySelector(".ghost_wrap");
-    html2canvas(ghost).then(function(canvas){
-		var myImage = canvas.toDataURL();
-		downloadURI(myImage, "myGhost.png") 
-	});
+    const ghost = document.querySelector(".ghost");
+    const color = document.querySelector(".color_wrap");
+
+    const ghostForDownload = ghost.cloneNode(true);
+    const colorForDownload = color.cloneNode(true);
+
+    let downloadWrap = document.createElement('div');
+    downloadWrap.classList.add("downloadWrap");
+    downloadWrap.appendChild(ghostForDownload);
+    downloadWrap.appendChild(colorForDownload);
+    document.body.appendChild(downloadWrap);
+
+    makeImage(downloadWrap).then((result) => {
+        console.log("성공:", result)
+        document.querySelector(".downloadWrap").remove(); 
+        document.querySelector(".downloadLink").remove();
+    })
 }
 
+function makeImage(obj){
+    return new Promise((resolve, reject) => {
+        resolve(html2canvas(obj).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, "myGhost.png");
+        }));
+    });
+}
+
+
 function downloadURI(uri, name){
-	var link = document.createElement("a")
+	const link = document.createElement("a");
+    link.classList.add("downloadLink");
 	link.download = name;
 	link.href = uri;
 	document.body.appendChild(link);
