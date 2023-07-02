@@ -74,6 +74,7 @@ function downloadGhost(){
         console.log("성공:", result)
         document.querySelector(".downloadWrap").remove(); 
         document.querySelector(".downloadLink").remove();
+        toggleColorInfo();
     })
 }
 
@@ -86,7 +87,6 @@ function makeImage(obj){
     });
 }
 
-
 function downloadURI(uri, name){
 	const link = document.createElement("a");
     link.classList.add("downloadLink");
@@ -96,3 +96,14 @@ function downloadURI(uri, name){
 	link.click();
 }
 
+
+
+async function share(){
+    navigator.share({
+        title: 'What color is my ghost?',
+        text: 'Make your ghost',
+        url: window.location.href
+    })
+      .then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+}
